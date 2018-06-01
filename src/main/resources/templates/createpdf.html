@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+
+.table {
+	width: 600px;
+}
+
+img {
+	height: 60px;
+	width: 300px;
+}
+</style>
+<title>Pdf Creation</title>
+</head>
+<body>
+	<table class="table" border="1">
+
+		<tr>
+			<td scope="row">FROM</td>
+			<td><p th:text="${from}" /></td>
+		</tr>
+
+		<tr>
+			<th scope="row">ORDER NUMBER</th>
+			<td><img style="float: left"
+				th:style="${orderNumber == null} ? 'default' : 'none'"
+				th:src="${orderNumber}" /></td>
+		</tr>
+
+		<tr>
+			<td><img style="float: left"
+				th:style="${boxId == null} ? 'default' : 'none'" th:src="${boxId}" /></td>
+			<th scope="row">BOX ID</th>
+		</tr>
+
+		<tr>
+			<th scope="row">INVOICE NUMBER</th>
+			<td><p th:text="${invoicenumber}" /></td>
+
+		</tr>
+		<tr>
+			<th>E-WAY BILL NUMBER</th>
+			<td><p th:text="${eWayBillNumber}" /></td>
+		</tr>
+
+		<tr>
+			<th>NUMBER OF BOXES</th>
+			<td><p th:text="${numberOfBoxes}" /></td>
+		</tr>
+
+		<tr>
+			<th>BOX NUMBER</th>
+			<td><p th:text="${boxnumber}" /></td>
+		</tr>
+
+		<tr>
+			<th>RECEPIENT ADDRESS</th>
+			<td><p th:text="${to}" /></td>
+		</tr>
+
+		<tr>
+
+			<td><img style="float: left"
+				th:style="${orderNumber == null} ? 'default' : 'none'"
+				th:src="${orderNumber}" /></td>
+			<th scope="row">AWB</th>
+		</tr>
+	</table>
+	<table class="table">
+		<tr>
+			<th>TRANSPORTER NAME</th>
+			<td><p th:text="${transporterName}" /></td>
+		</tr>
+
+		<tr>
+			<th>SERVICE NAME</th>
+			<td><p th:text="${serviceName}" /></td>
+		</tr>
+
+	</table>
+</body>
+</html>
